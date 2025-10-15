@@ -1,0 +1,158 @@
+
+.pricing {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    position: relative;
+    min-height: 100vh;
+}
+
+.pricing::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(255, 0, 64, 0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(0, 132, 255, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.pricing-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.pricing-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(102, 126, 234, 0.3);
+    border-radius: 25px;
+    padding: 3rem 2rem;
+    text-align: center;
+    transition: all 0.5s;
+    color: var(--light);
+    position: relative;
+}
+
+.pricing-card:hover {
+    transform: translateY(-20px) scale(1.05);
+    border-color: #667eea;
+    box-shadow: 0 30px 80px rgba(102, 126, 234, 0.5);
+}
+
+.pricing-card.featured {
+    transform: scale(1.05);
+    border-color: #ff0040;
+    box-shadow: 0 25px 70px rgba(255, 0, 128, 0.4);
+}
+
+.pricing-card.featured:hover {
+    transform: translateY(-20px) scale(1.1);
+}
+
+.pricing-badge {
+    background: linear-gradient(45deg, #ff0040, #ff8c00);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.pricing-card h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.price {
+    font-size: 4rem;
+    font-weight: 900;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+}
+
+.price-period {
+    color: #888;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.features-list li {
+    padding: 0.8rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ccc;
+    font-size: 0.95rem;
+}
+
+.features-list li:last-child {
+    border-bottom: none;
+}
+
+.features-list li::before {
+    content: '✓ ';
+    color: #667eea;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.btn-pricing {
+    display: inline-block;
+    padding: 1.2rem 3rem;
+    background: linear-gradient(135deg, #ff0040, #ff6b6b);
+    color: var(--light);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.4s;
+    box-shadow: 0 10px 30px rgba(255, 0, 64, 0.3);
+}
+
+.btn-pricing:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 15px 50px rgba(255, 0, 64, 0.5);
+}
+
+.pricing-note {
+    text-align: center;
+    margin-top: 4rem;
+    color: var(--light);
+}
+
+.pricing-note h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+}
+
+.pricing-note p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
