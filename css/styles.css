@@ -41,7 +41,6 @@ header {
     transition: all 0.3s ease;
 }
 
-/* NAV: chứa logo trái - menu phải */
 nav {
     width: 100%;
     margin: 0 auto;
@@ -88,8 +87,9 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
+    gap: 2.5rem;
+    margin-left: auto; 
     list-style: none;
-    gap: 2rem;
 }
 
 .nav-links a {
@@ -132,7 +132,9 @@ nav {
 /* NÚT GỌI & NHẮN TIN */
 .header-cta {
     display: flex;
-    gap: 1rem;
+    align-items: center;
+    gap: 1.5rem; 
+    margin-left: 2.5rem; 
 }
 
 .btn-call, .btn-message {
