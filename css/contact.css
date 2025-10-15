@@ -1,0 +1,533 @@
+/* ============ CONTACT PAGE STYLES - FITX-06 ============ */
+/* Standalone CSS - không phụ thuộc vào biến */
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 2rem;
+    background: #f5f5f5;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/* Contact Info */
+.contact-info {
+    background: #fff;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    transition: all 0.5s ease;
+}
+
+.contact-info:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(255, 0, 64, 0.2);
+}
+
+.contact-info h3 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #000;
+    letter-spacing: 2px;
+    background: linear-gradient(45deg, #ff0040, #0084ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Info Items */
+.info-item {
+    display: flex;
+    align-items: start;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f8f8, #fff);
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.info-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 0, 64, 0.1), transparent);
+    transition: left 0.5s;
+}
+
+.info-item:hover::before {
+    left: 100%;
+}
+
+.info-item:hover {
+    background: #fff;
+    transform: translateX(10px);
+    box-shadow: 0 5px 20px rgba(255, 0, 64, 0.15);
+    border-color: rgba(255, 0, 64, 0.3);
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    margin-right: 1.5rem;
+    animation: bounce 2s ease-in-out infinite;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.info-item:nth-child(1) .info-icon { animation-delay: 0s; }
+.info-item:nth-child(2) .info-icon { animation-delay: 0.2s; }
+.info-item:nth-child(3) .info-icon { animation-delay: 0.4s; }
+.info-item:nth-child(4) .info-icon { animation-delay: 0.6s; }
+
+.info-content {
+    flex: 1;
+}
+
+.info-content h4 {
+    color: #ff0040;
+    margin-bottom: 0.8rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.5px;
+}
+
+.info-content p {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.info-content a {
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s;
+    position: relative;
+    font-weight: 500;
+}
+
+.info-content a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #ff0040, #0084ff);
+    transition: width 0.3s ease;
+}
+
+.info-content a:hover {
+    color: #ff0040;
+    transform: translateX(3px);
+    display: inline-block;
+}
+
+.info-content a:hover::after {
+    width: 100%;
+}
+
+.social-link {
+    color: #0084ff;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    margin-bottom: 0.3rem;
+}
+
+.social-link:hover {
+    color: #ff0040;
+    transform: translateX(5px);
+}
+
+/* Hours Table */
+.hours-table {
+    background: linear-gradient(135deg, #f8f8f8, #fff);
+    padding: 2rem;
+    border-radius: 15px;
+    margin-top: 2rem;
+    border: 2px solid #f0f0f0;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.hours-table::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 0, 64, 0.05) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.hours-table:hover::before {
+    opacity: 1;
+}
+
+.hours-table:hover {
+    border-color: #ff0040;
+    box-shadow: 0 5px 20px rgba(255, 0, 64, 0.1);
+    transform: scale(1.02);
+}
+
+.hours-table h4 {
+    color: #000;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    font-size: 1.3rem;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hours-table h4::before {
+    content: '🕐';
+    font-size: 1.5rem;
+    animation: spin 3s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hours-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    position: relative;
+    z-index: 1;
+}
+
+.hours-row:last-child {
+    border-bottom: none;
+}
+
+.hours-row:hover {
+    background: rgba(255, 0, 64, 0.05);
+    transform: translateX(5px);
+}
+
+.hours-row span:first-child {
+    color: #333;
+    font-weight: 500;
+}
+
+.hours-row span:last-child {
+    color: #ff0040;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contact-buttons .btn-primary {
+    flex: 1;
+    text-align: center;
+    justify-content: center;
+    padding: 1.2rem 2rem;
+}
+
+/* Map Container - Real Google Maps */
+.map-container {
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    min-height: 500px;
+    transition: all 0.5s ease;
+    position: relative;
+}
+
+.map-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 3px solid transparent;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.map-container:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0, 132, 255, 0.3);
+}
+
+.map-container:hover::before {
+    border-color: #0084ff;
+    box-shadow: 0 0 30px rgba(0, 132, 255, 0.4);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: none;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .contact-grid {
+        gap: 2.5rem;
+    }
+    
+    .contact-info {
+        padding: 2.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 2.2rem;
+    }
+    
+    .map-container {
+        min-height: 450px;
+    }
+    
+    .map-container iframe {
+        min-height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 4rem 1rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-info {
+        padding: 2rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 2rem;
+    }
+    
+    .info-item {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .info-icon {
+        font-size: 2rem;
+        margin-right: 1rem;
+    }
+    
+    .info-content h4 {
+        font-size: 1.1rem;
+    }
+    
+    .info-content p {
+        font-size: 0.95rem;
+    }
+    
+    .hours-table {
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+    }
+    
+    .hours-table h4 {
+        font-size: 1.2rem;
+    }
+    
+    .hours-row {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .map-container {
+        min-height: 400px;
+        order: -1;
+    }
+    
+    .map-container iframe {
+        min-height: 400px;
+    }
+    
+    .contact-buttons {
+        flex-direction: column;
+    }
+    
+    .contact-buttons .btn-primary {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 3rem 1rem;
+    }
+    
+    .contact-info {
+        padding: 1.5rem;
+    }
+    
+    .contact-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .info-icon {
+        margin-right: 0;
+        margin-bottom: 0.8rem;
+        font-size: 2.5rem;
+    }
+    
+    .info-content h4 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .info-content p {
+        font-size: 0.9rem;
+    }
+    
+    .hours-table {
+        padding: 1.2rem;
+    }
+    
+    .hours-table h4 {
+        font-size: 1.1rem;
+        justify-content: center;
+    }
+    
+    .hours-row {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 0.8rem;
+    }
+    
+    .hours-row span:last-child {
+        font-size: 1rem;
+    }
+    
+    .map-container {
+        min-height: 350px;
+        border-radius: 15px;
+    }
+    
+    .map-container iframe {
+        min-height: 350px;
+        border-radius: 15px;
+    }
+    
+    .contact-buttons .btn-primary {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Loading animation for map */
+.map-container iframe {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Special styling for KPark address */
+.info-item:first-child {
+    background: linear-gradient(135deg, #fff5f5, #fff);
+}
+
+.info-item:first-child:hover {
+    background: linear-gradient(135deg, #fff, #fff5f5);
+}
+
+/* Phone number highlight */
+.info-item:nth-child(2) a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ff0040;
+}
+
+.info-item:nth-child(2) a:hover {
+    transform: scale(1.05);
+    display: inline-block;
+}
+
+/* Email styling */
+.info-item:nth-child(3) a {
+    color: #0084ff;
+    font-family: 'Courier New', monospace;
+}
+
+/* Social links container */
+.info-item:nth-child(4) .info-content p {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-item:nth-child(4) .social-link {
+    padding: 0.3rem 0;
+}
+
+.info-item:nth-child(4) .social-link::before {
+    content: '→ ';
+    margin-right: 0.3rem;
+    transition: margin 0.3s;
+}
+
+.info-item:nth-child(4) .social-link:hover::before {
+    margin-right: 0.8rem;
+}
