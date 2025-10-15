@@ -31,7 +31,7 @@ header {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(15px);
     color: var(--light);
-    padding: 1.2rem 0;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -41,13 +41,27 @@ header {
     transition: all 0.3s ease;
 }
 
+/* NAV: chứa logo trái - menu phải */
 nav {
-    max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 2.5rem;
+}
+
+/* LOGO (ảnh + chữ) */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
 .logo a {
@@ -59,7 +73,6 @@ nav {
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
     text-decoration: none;
     animation: gradientShift 3s ease infinite;
     transition: all 0.3s;
@@ -71,15 +84,12 @@ nav {
     filter: drop-shadow(0 0 20px rgba(255, 0, 64, 1));
 }
 
-@keyframes gradientShift {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-}
-
+/* NAV LINKS BÊN PHẢI */
 .nav-links {
     display: flex;
+    align-items: center;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
 }
 
 .nav-links a {
@@ -119,13 +129,14 @@ nav {
     transform: translateY(-2px);
 }
 
+/* NÚT GỌI & NHẮN TIN */
 .header-cta {
     display: flex;
     gap: 1rem;
 }
 
 .btn-call, .btn-message {
-    padding: 0.8rem 2rem;
+    padding: 0.7rem 1.8rem;
     border-radius: 30px;
     text-decoration: none;
     font-weight: 700;
@@ -134,6 +145,10 @@ nav {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .btn-call::before,
@@ -177,6 +192,7 @@ nav {
     transform: translateY(-5px) scale(1.05);
     box-shadow: 0 8px 30px rgba(0, 132, 255, 0.6);
 }
+
 
 /* ============ PAGE HEADER (Dùng chung cho các trang con) ============ */
 .page-header {
