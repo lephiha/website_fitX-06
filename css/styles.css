@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600;700;900&family=Poppins:wght@400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css');
 
 /* ============ GLOBAL STYLES ============ */
 * {
@@ -16,7 +17,7 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
@@ -24,6 +25,11 @@ body {
 
 html {
     scroll-behavior: smooth;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
 }
 
 /* ============ HEADER ============ */
@@ -93,7 +99,7 @@ nav {
 }
 
 .nav-links a {
-    font-family: 'Montserrat', sans-serif;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
     color: var(--light);
     text-decoration: none;
     font-weight: 700;
@@ -141,6 +147,7 @@ nav {
     padding: 0.7rem 1.8rem;
     border-radius: 30px;
     text-decoration: none;
+    font-family: Tahoma, sans-serif;
     font-weight: 700;
     font-size: 0.9rem;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
@@ -153,8 +160,20 @@ nav {
     gap: 8px;
 }
 
-.btn-call::before,
+/* Font Awesome Icons */
+.btn-call::before {
+    content: '\f095';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
 .btn-message::before {
+    content: '\f39f';
+    font-family: 'Font Awesome 6 Brands';
+}
+
+.btn-call::after,
+.btn-message::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -165,10 +184,11 @@ nav {
     background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
+    z-index: 0;
 }
 
-.btn-call:hover::before,
-.btn-message:hover::before {
+.btn-call:hover::after,
+.btn-message:hover::after {
     width: 300px;
     height: 300px;
 }
@@ -232,6 +252,7 @@ nav {
 }
 
 .page-header p {
+    font-family: Tahoma, sans-serif;
     font-size: 1.5rem;
     opacity: 0.9;
     position: relative;
@@ -256,6 +277,7 @@ nav {
     padding: 1.2rem 3rem;
     font-size: 1.1rem;
     font-weight: 700;
+    font-family: Tahoma, sans-serif;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -280,6 +302,7 @@ nav {
     background: rgba(255, 255, 255, 0.3);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
+    z-index: 0;
 }
 
 .btn-primary:hover::before {
@@ -340,6 +363,7 @@ footer {
 }
 
 .footer-section p {
+    font-family: Tahoma, sans-serif;
     line-height: 1.8;
     opacity: 0.8;
 }
@@ -357,6 +381,7 @@ footer {
 }
 
 .footer-section a {
+    font-family: Tahoma, sans-serif;
     color: #ccc;
     text-decoration: none;
     transition: all 0.3s;
@@ -369,6 +394,7 @@ footer {
 }
 
 .footer-bottom {
+    font-family: Tahoma, sans-serif;
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
@@ -468,12 +494,22 @@ footer {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
+
+    .logo img {
+        width: 70px;
+        height: 70px;
+    }
 }
 
 @media (max-width: 480px) {
     .logo a {
         font-size: 2rem;
         letter-spacing: 2px;
+    }
+
+    .logo img {
+        width: 60px;
+        height: 60px;
     }
     
     .btn-primary {
