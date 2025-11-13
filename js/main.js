@@ -146,9 +146,39 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.opacity = '1';
         }, 100);
     });
+
+    // ==========================================
+    // LINK CARDS SMOOTH SCROLL + ANIMATION
+    // ==========================================
+    const linkCards = document.querySelectorAll('.link-card');
+    linkCards.forEach(function(card) {
+        card.addEventListener('click', function(e) {
+            // Animation click
+            this.style.transform = 'scale(0.95)';
+            
+            setTimeout(function() {
+                card.style.transform = '';
+            }, 200);
+            
+            // Smooth scroll nếu là anchor link (#)
+            const href = this.getAttribute('href');
+            if (href && href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            }
+        });
+    });
     
     // Console log for debugging
-    console.log('APEX Fitness Website Loaded Successfully! 💪');
+    console.log('FitX-06 Website Loaded Successfully! 💪');
     console.log('Designed with ❤️ for maximum performance');
     
 });
